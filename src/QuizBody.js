@@ -2,26 +2,33 @@ import React from "react";
 import { RadioGroup, ReversedRadioButton } from "react-radio-buttons";
 import logo from "./logo.svg";
 
-const QuizBody = ({ quiz, currentResponse, handleResponseChange }) => {
-  console.log(currentResponse);
+const QuizBody = ({ quiz, handleResponseChange }) => {
   return (
     <div>
       <div className="Header">
-        <h1 className="QuizTitle">{quiz.question}</h1>
+        <h1 className="QuizTitle">{quiz.name}</h1>
       </div>
       <img src={logo} className="App-logo" alt="logo" />
-      <div className="Options">
-        <RadioGroup
-          onChange={value => handleResponseChange(value)}
-          value={currentResponse}
-        >
-          {quiz.options.map(option => (
-            <ReversedRadioButton value={option.key} key={option.key}>
-              {option.value}
-            </ReversedRadioButton>
-          ))}
-        </RadioGroup>
-      </div>
+      {quiz.questions.map(question => (
+        <div key={question.id}>
+          <h3 className="QuestionName">{question.name}</h3>
+          <div className="Options">
+            <RadioGroup
+              onChange={value => handleResponseChange(value)}
+              value={"0"}
+            >
+              {question.options.map(option => (
+                <ReversedRadioButton
+                  value={`${option.id}`}
+                  key={`${option.id}`}
+                >
+                  {option.value}
+                </ReversedRadioButton>
+              ))}
+            </RadioGroup>
+          </div>
+        </div>
+      ))}
     </div>
   );
 };

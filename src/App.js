@@ -15,17 +15,6 @@ class App extends Component {
 
   handleRadioChange = value => {
     console.log(value);
-    const { currentPage } = this.state;
-    const response = {
-      questionId: quizes[currentPage].id,
-      answer: value
-    };
-    console.log("hola");
-    console.log([...this.state.responses, response]);
-    this.setState(prevState => ({
-      currentResponse: value,
-      responses: [...prevState.responses, response]
-    }));
   };
 
   handlePrev = () => {
@@ -48,12 +37,6 @@ class App extends Component {
     this.clearResponse();
   };
 
-  clearResponse = () => {
-    this.setState({
-      currentResponse: null
-    });
-  };
-
   render() {
     const { currentPage, totalPages, responses } = this.state;
     const isFirst = currentPage === 0;
@@ -63,11 +46,11 @@ class App extends Component {
         <div className="Container">
           <QuizBody
             quiz={quizes[currentPage]}
-            currentResponse={
-              responses[currentPage + 1]
-                ? responses[currentPage + 1].answer
-                : ""
-            }
+            // currentResponse={
+            //   responses[currentPage + 1]
+            //     ? responses[currentPage + 1].answer
+            //     : ""
+            // }
             handleResponseChange={this.handleRadioChange}
           />
           <div className="ControlBar">

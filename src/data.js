@@ -1,77 +1,98 @@
 export default [
   {
     id: 1,
-    question: "¿Que me miras?",
-    description: "Jajajaj aweonao",
-    options: [
+    name: "Quiz- Mide tus conocimientos",
+    isFree: true,
+    isPublished: true,
+    score: 20,
+    questions: [
       {
-        key: "apple",
-        value: "Apple"
+        id: 1,
+        name: "La función para saber si un año es biciesto es:",
+        type: "dicotomic",
+        weight: 4,
+        options: [
+          {
+            id: 1,
+            value: "Verdadero"
+          },
+          {
+            id: 2,
+            value: "Falso"
+          }
+        ],
+        answers: [1],
+        suggestion: {
+          lessonId: 1,
+          subjectId: 1,
+          time: 7127
+        }
       },
       {
-        key: "orange",
-        value: "Orange"
+        id: 2,
+        name:
+          "¿Qué se considera BBDD o Matriz a evaluar en una pregunta convencional con tabla de datos?",
+        type: "simple",
+        weight: 4,
+        options: [
+          {
+            id: 1,
+            value: "Banana"
+          },
+          {
+            id: 2,
+            value: "La wea"
+          },
+          {
+            id: 3,
+            value: "Fome"
+          }
+        ],
+        answers: [2]
       },
       {
-        key: "melon",
-        value: "Melon"
-      }
-    ]
-  },
-  {
-    id: 2,
-    question: "¿Me oyes?",
-    description: "lel, :)",
-    options: [
-      {
-        key: "banana",
-        value: "Banana"
+        id: 3,
+        name: "La función para saber si un año es biciesto es:",
+        type: "multiple",
+        weight: 4,
+        options: [
+          {
+            id: 1,
+            value: "Perrito"
+          },
+          {
+            id: 2,
+            value: "Gatito"
+          },
+          {
+            id: 3,
+            value: ":( :("
+          }
+        ],
+        answers: [2, 3]
       },
       {
-        key: "lawea",
-        value: "La wea"
-      },
-      {
-        key: "fome",
-        value: "Fome"
-      }
-    ]
-  },
-  {
-    id: 3,
-    question: "¿Me escuchas?",
-    description: "llalalallaa",
-    options: [
-      {
-        key: "perrito",
-        value: "Perrito"
-      },
-      {
-        key: "gatito",
-        value: "Gatito"
-      },
-      {
-        key: "ay",
-        value: ":( :("
-      }
-    ]
-  },
-  {
-    id: 4,
-    question: "¿Me sientes?",
-    description: "lel, :)",
-    options: [
-      {
-        key: "lala",
-        value: "Kiick"
-      },
-      {
-        key: "elellee",
-        value: "Soooyy yooo"
-      },
-      {
-        key: "asdk",
-        value: "Meiuhr"
+        id: 4,
+        name:
+          "¿Qué se considera BBDD o Matriz a evaluar en una pregunta convencional con tabla de datos?",
+        description: "lel, :)",
+        type: "simple",
+        weight: 4,
+        options: [
+          {
+            id: 1,
+            value: "Kiick"
+          },
+          {
+            id: 2,
+            value: "Soooyy yooo"
+          },
+          {
+            id: 3,
+            value: "Meiuhr"
+          }
+        ],
+        answers: [3]
       }
     ]
   }
